@@ -14,12 +14,14 @@ class GoodInfoScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: <Widget>[
+          
           GoodInfoContent(),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             alignment: Alignment.bottomCenter,
             child: GoodInfoBottomPanel(),
           ),
+          BackButton(),
         ],
       ),
     );
@@ -31,5 +33,19 @@ class GoodInfoScreen extends StatelessWidget {
         item: item,
       );
     });
+  }
+}
+
+class BackButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+      alignment: Alignment.topLeft,
+      child: IconButton(
+        onPressed: () => Navigator.of(context).pop(),
+        icon: Icon(Icons.arrow_back_ios),
+      ),
+    );
   }
 }
