@@ -15,7 +15,7 @@ class GoodItemWidget extends StatelessWidget {
         decoration: new BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(18))),
-        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 18),
+        padding: EdgeInsets.symmetric(vertical: 18, horizontal: 18),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,

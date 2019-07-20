@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutterthon/src/home_screen.dart';
-import 'package:flutterthon/src/modules/info/good_info_screen.dart';
 import 'package:flutterthon/src/models/items_storage.dart';
 
 void main() => runApp(MyApp());
@@ -10,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: HomeScreen(items: goodItems,),
-      // home: GoodInfoScreen(),
     );
   }
 }
