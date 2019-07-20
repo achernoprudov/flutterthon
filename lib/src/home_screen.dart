@@ -11,12 +11,25 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+        backgroundColor: Colors.black,
         body: ListView(
-      children: <Widget>[
-        MainItemsGrid(items: items),
-        MainCart(),
-      ],
-    ));
+          children: <Widget>[
+            Container(
+              color: Colors.black,
+              height: MediaQuery.of(context).size.height - 150,
+              child: Container(
+                decoration: new BoxDecoration(
+                    color: Color.fromRGBO(250, 250, 250, 1),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(36),
+                        bottomRight: Radius.circular(36))),
+                height: MediaQuery.of(context).size.height - 150,
+                child: MainItemsGrid(items: items),
+                padding: EdgeInsets.only(bottom: 9),
+              ),
+            ),
+            MainCart(),
+          ],
+        ));
   }
 }

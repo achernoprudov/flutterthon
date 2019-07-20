@@ -10,13 +10,13 @@ class MainCart extends StatelessWidget {
     return Container(
       // height: MediaQuery.of(context).size.height - 200,
       color: Colors.black,
-      padding: EdgeInsets.only(top: 40, left: 10, right: 10, bottom: 100),
+      padding: EdgeInsets.only(top: 24, left: 24, right: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
             'Cart',
-            style: textTheme.display1.copyWith(color: Colors.white),
+            style: textTheme.headline.copyWith(color: Colors.white),
           ),
           ListView(
             shrinkWrap: true,

@@ -12,19 +12,14 @@ class MainItemsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: new BoxDecoration(
-        color: Colors.grey[100],
-            borderRadius: BorderRadius.all(Radius.circular(18))),
-      height: MediaQuery.of(context).size.height - 150,
-      
       child: StaggeredGridView.countBuilder(
-        padding: EdgeInsets.only(top: 48, left: 12, right: 12),
+        padding: EdgeInsets.symmetric(horizontal: 12),
         crossAxisCount: 4,
         itemCount: items.length,
         itemBuilder: (BuildContext context, int index) => GoodItemWidget(
-          item: items[index],
-          onTap: () => openInfo(context, items[index]),
-        ),
+              item: items[index],
+              onTap: () => openInfo(context, items[index]),
+            ),
         staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
         mainAxisSpacing: 12,
         crossAxisSpacing: 12,
