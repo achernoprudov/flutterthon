@@ -12,8 +12,11 @@ class MainItemsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height - 100,
-      color: Colors.grey[100],
+      decoration: new BoxDecoration(
+        color: Colors.grey[100],
+            borderRadius: BorderRadius.all(Radius.circular(18))),
+      height: MediaQuery.of(context).size.height - 150,
+      
       child: StaggeredGridView.countBuilder(
         padding: EdgeInsets.only(top: 48, left: 12, right: 12),
         crossAxisCount: 4,
