@@ -12,18 +12,35 @@ class GoodItemWidget extends StatelessWidget {
       decoration: new BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(18))),
+      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 18),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(item.imageUrl),
-          Text(
-            "\$${item.price.toString()}",
-            textAlign: TextAlign.left,
+          Container(
+            padding: EdgeInsets.only(
+              top: 24,
+              bottom: 12
+            ),
+            alignment: Alignment.center,
+            child: Image.network(
+              item.imageUrl,
+              //height: 100,
+              width: 100,
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(
+              vertical: 12,
+            ),
+            child: Text(
+              "\$${item.price.toString()}",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            ),
           ),
           Text(
             item.name,
-            textAlign: TextAlign.left,
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
           )
         ],
       ),

@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      // home: HomeScreen(),
-      home: GoodInfoScreen(),
+      home: HomeScreen(),
+      //home: GoodInfoScreen(),
     );
   }
 }

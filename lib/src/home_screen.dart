@@ -5,7 +5,13 @@ import 'package:flutterthon/src/widgets/good_item_widget.dart';
 class HomeScreen extends StatelessWidget {
   var items = [
     new GoodItem("1", "Segianno Organic Troulette", "", "", 7.99, 500),
-    new GoodItem("2", "Pasta", "", "", 1.99, 450),
+    new GoodItem(
+        "2",
+        "Pasta",
+        "",
+        "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/spaghetti_2.jpg?itok=sgV-1uRP",
+        1.99,
+        450),
     new GoodItem("3", "Tetskhskfhalshdf", "", "", 1.99, 450),
   ]; // TODO add dummy data
 
