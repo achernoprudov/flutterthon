@@ -1,18 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutterthon/src/models/good_item_model.dart';
 import 'package:flutterthon/src/modules/main/main_cart.dart';
 
 import 'main_items_grid.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   final List<GoodItem> items;
 
-  const MainScreen({Key key, this.items}) : super(key: key);
+  MainScreen({Key key, this.items}) : super(key: key);
+
+  @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  Color clr;
+  final controller = ScrollController();
+
+  @override
+  void initState() {
+    controller.addListener(scrollListener);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: clr,
         body: ListView(
+          controller: controller,
           children: <Widget>[
             Container(
               color: Colors.black,
@@ -24,12 +41,22 @@ class MainScreen extends StatelessWidget {
                         bottomLeft: Radius.circular(36),
                         bottomRight: Radius.circular(36))),
                 height: MediaQuery.of(context).size.height - 150,
-                child: MainItemsGrid(items: items),
+                child: MainItemsGrid(items: widget.items),
                 padding: EdgeInsets.only(bottom: 24),
               ),
             ),
             MainCart(),
           ],
         ));
+  }
+
+  scrollListener() {
+    setState(() {
+      if (controller.offset > 100) {
+        clr = Colors.black;
+      } else {
+        clr = null;
+      }
+    });
   }
 }
