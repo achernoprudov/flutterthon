@@ -13,26 +13,58 @@ class GoodInfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        alignment: Alignment.bottomCenter,
         children: <Widget>[
-          
           GoodInfoContent(item),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-            alignment: Alignment.bottomCenter,
-            child: GoodInfoBottomPanel(),
+            height: 36,
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    stops: [
+                  0.1,
+                  0.4,
+                  0.6,
+                  0.9
+                ],
+                    colors: [
+                  Color.fromRGBO(250, 250, 250, 0.9),
+                  Color.fromRGBO(250, 250, 250, 0.6),
+                  Color.fromRGBO(250, 250, 250, 0.4),
+                  Color.fromRGBO(250, 250, 250, 0.1),
+                ])),
           ),
           BackButton(),
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: 90,
+        padding: EdgeInsets.only(left: 18, right: 18, bottom: 24),
+        alignment: Alignment.bottomCenter,
+        child: GoodInfoBottomPanel(onAddTap: () {
+          Navigator.of(context).pop(item);
+        }),
       ),
     );
   }
 
   static Route<GoodItem> route(GoodItem item) {
-    return MaterialPageRoute(builder: (context) {
-      return GoodInfoScreen(
-        item: item,
-      );
-    });
+    return PageRouteBuilder(
+        pageBuilder: (context, _, __) => GoodInfoScreen(
+              item: item,
+            ),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          final tween = Tween(begin: Offset(0, 1), end: Offset(0, 0));
+          return SlideTransition(
+            position: tween.animate(animation),
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+          //
+        });
   }
 }
 

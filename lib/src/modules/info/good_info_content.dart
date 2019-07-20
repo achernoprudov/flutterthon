@@ -16,7 +16,8 @@ class GoodInfoContent extends StatelessWidget {
           alignment: Alignment.center,
           child: Hero(
             tag: 'item-image-${item.uid}',
-            child: Image.network(item.imageUrl),),
+            child: Image.network(item.imageUrl),
+          ),
         ),
         SizedBox(
           height: 30,
@@ -33,14 +34,32 @@ class GoodInfoContent extends StatelessWidget {
           style: textTheme.caption,
         ),
         SizedBox(
-          height: 9,
+          height: 24,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            RaisedButton(
-              child: Text('quantity'),
-              onPressed: () {},
+            Container(
+              decoration: new BoxDecoration(
+                  border: Border.all(width: 2, color: Colors.grey[200]),
+                  borderRadius: BorderRadius.all(Radius.circular(30))),
+              padding: EdgeInsets.all(12),
+              child: Row(
+                children: <Widget>[
+                  Icon(Icons.remove),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Text(
+                    "1",
+                    style: textTheme.title,
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Icon(Icons.add),
+                ],
+              ),
             ),
             Text(
               "\$${item.price}",
@@ -49,11 +68,11 @@ class GoodInfoContent extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 9,
+          height: 24,
         ),
         Text(
           'About the product',
-          style: textTheme.subhead,
+          style: textTheme.title,
         ),
         SizedBox(
           height: 9,
@@ -61,6 +80,9 @@ class GoodInfoContent extends StatelessWidget {
         Text(
           item.description,
           style: textTheme.body1,
+        ),
+        SizedBox(
+          height: 36,
         ),
       ],
     );
