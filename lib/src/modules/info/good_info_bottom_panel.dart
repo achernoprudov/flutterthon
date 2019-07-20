@@ -1,30 +1,5 @@
 import 'package:flutter/material.dart';
 
-class GoodInfoScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          GoodInfoContent(),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-            alignment: Alignment.bottomCenter,
-            child: GoodInfoBottomPanel(),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class GoodInfoContent extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
 class GoodInfoBottomPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

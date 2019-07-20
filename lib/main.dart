@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterthon/src/good_info_screen.dart';
 import 'package:flutterthon/src/home_screen.dart';
+import 'package:flutterthon/src/modules/info/good_info_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
-      // home: GoodInfoScreen(),
+      // home: HomeScreen(),
+      home: GoodInfoScreen(),
     );
   }
 }
