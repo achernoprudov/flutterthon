@@ -16,7 +16,6 @@ class MainItemsGrid extends StatelessWidget {
         color: Colors.grey[100],
             borderRadius: BorderRadius.all(Radius.circular(18))),
       height: MediaQuery.of(context).size.height - 150,
-      
       child: StaggeredGridView.countBuilder(
         padding: EdgeInsets.only(top: 48, left: 12, right: 12),
         crossAxisCount: 4,
