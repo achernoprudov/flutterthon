@@ -26,14 +26,14 @@ class GoodInfoContent extends StatelessWidget {
           style: textTheme.display1.copyWith(color: Colors.black),
         ),
         SizedBox(
-          height: 10,
+          height: 9,
         ),
         Text(
           "${item.amount.toString()}g",
           style: textTheme.caption,
         ),
         SizedBox(
-          height: 10,
+          height: 9,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,14 +49,14 @@ class GoodInfoContent extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 10,
+          height: 9,
         ),
         Text(
           'About the product',
           style: textTheme.subhead,
         ),
         SizedBox(
-          height: 10,
+          height: 9,
         ),
         Text(
           item.description,
