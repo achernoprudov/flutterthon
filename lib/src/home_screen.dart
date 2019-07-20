@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
           itemCount: items.length,
           itemBuilder: (BuildContext context, int index) => GoodItemWidget(
                 item: items[index],
-                onTap: openInfo(context, items[index]),
+                onTap: () => openInfo(context, items[index]),
               ),
           staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
           mainAxisSpacing: 12,
