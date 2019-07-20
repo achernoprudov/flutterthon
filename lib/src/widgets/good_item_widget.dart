@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutterthon/src/models/good_item_model.dart';
 
-class GridItemWidget extends StatelessWidget {
-  GridItemWidget(int item);
+class GoodItemWidget extends StatelessWidget {
+
+  GoodItem item;
+
+  GoodItemWidget(this.item);
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +17,9 @@ class GridItemWidget extends StatelessWidget {
       child: Container(
         height: 100,
         width: 60,
+        child: Text(
+          item.name
+        ),
       ),
     );
   }
