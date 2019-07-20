@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutterthon/src/models/good_item_model.dart';
 
 import 'good_info_bottom_panel.dart';
 import 'good_info_content.dart';
 
 class GoodInfoScreen extends StatelessWidget {
+  final GoodItem item;
+
+  const GoodInfoScreen({Key key, this.item}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,5 +23,13 @@ class GoodInfoScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  static Route<GoodItem> route(GoodItem item) {
+    return MaterialPageRoute(builder: (context) {
+      return GoodInfoScreen(
+        item: item,
+      );
+    });
   }
 }

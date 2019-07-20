@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutterthon/src/models/good_item_model.dart';
 
 class GoodItemWidget extends StatelessWidget {
-  GoodItem item;
+  final GoodItem item;
+  final VoidCallback onTap;
 
-  GoodItemWidget(this.item);
+  GoodItemWidget({this.item, this.onTap});
 
   @override
   Widget build(BuildContext context) {

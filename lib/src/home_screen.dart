@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterthon/src/models/good_item_model.dart';
+import 'package:flutterthon/src/modules/info/good_info_screen.dart';
 import 'package:flutterthon/src/widgets/good_item_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,9 +25,19 @@ class HomeScreen extends StatelessWidget {
         mainAxisSpacing: 12,
         padding: EdgeInsets.all(12),
         crossAxisSpacing: 12,
-        children: items.map((item) => GoodItemWidget(item)).toList(),
+        children: items
+            .map((item) => GoodItemWidget(
+                  item: item,
+                  onTap: () => openInfo(context, item),
+                ))
+            .toList(),
         crossAxisCount: 2,
       ),
     ));
+  }
+
+  openInfo(BuildContext context, GoodItem item) {
+    final route = GoodInfoScreen.route(item);
+    Navigator.of(context).push(route);
   }
 }
