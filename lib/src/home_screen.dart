@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterthon/src/models/good_item_model.dart';
+import 'package:flutterthon/src/modules/main/main_cart.dart';
 import 'modules/main/main_items_grid.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,6 +10,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: MainItemsGrid(items: items));
+    return Scaffold(
+        body: ListView(
+      children: <Widget>[
+        MainItemsGrid(items: items),
+        MainCart(),
+      ],
+    ));
   }
 }
