@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterthon/src/widgets/round_button.dart';
 
 class GoodInfoBottomPanel extends StatelessWidget {
   final VoidCallback onAddTap;
@@ -14,18 +15,10 @@ class GoodInfoBottomPanel extends StatelessWidget {
           onPressed: () {},
         ),
         Expanded(
-          child: FlatButton(
-            onPressed: onAddTap,
-            color: Colors.yellow[700],
-            textColor: Colors.black,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: Text('Add to cart'),
-            ),
-          ),
-        )
+            child: RoundButton(
+          title: 'Add to cart',
+          onTap: onAddTap,
+        ))
       ],
     );
   }
