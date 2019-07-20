@@ -9,6 +9,7 @@ class GoodItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return InkWell(
       onTap: onTap,
       child: Container(
@@ -41,8 +42,15 @@ class GoodItemWidget extends StatelessWidget {
             ),
             Text(
               item.name,
-              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
-            )
+              style: textTheme.subtitle,
+            ),
+            SizedBox(
+              height: 9,
+            ),
+            Text(
+              "${item.amount}g",
+              style: textTheme.caption,
+            ),
           ],
         ),
       ),
