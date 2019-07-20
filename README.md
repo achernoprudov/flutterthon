@@ -1,6 +1,8 @@
 # flutterthon
 
-A new Flutter project.
+Flutterthon project.
+
+![Alt Text](https://github.com/achernoprudov/flutterthon/blob/master/resources/demo.gif)
 
 ## Getting Started
 
