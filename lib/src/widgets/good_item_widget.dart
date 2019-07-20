@@ -25,8 +25,6 @@ class GoodItemWidget extends StatelessWidget {
               alignment: Alignment.center,
               child: Image.network(
                 item.imageUrl,
-                //height: 100,
-                width: 100,
               ),
             ),
             Container(

@@ -15,7 +15,7 @@ class GoodInfoScreen extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           
-          GoodInfoContent(),
+          GoodInfoContent(item),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             alignment: Alignment.bottomCenter,

@@ -1,32 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutterthon/src/models/good_item_model.dart';
 
 class GoodInfoContent extends StatelessWidget {
+  final GoodItem item;
+
+  const GoodInfoContent(this.item);
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return ListView(
-      padding: EdgeInsets.only(top: 100, left: 30, right: 30),
+      padding: EdgeInsets.only(top: 96, left: 30, right: 30),
       children: <Widget>[
         Align(
           alignment: Alignment.center,
-          child: Container(
-            height: 300,
-            width: 300,
-            color: Colors.red,
-          ),
+          child: Image.network(item.imageUrl),
         ),
         SizedBox(
           height: 30,
         ),
         Text(
-          'Item name',
+          item.name,
           style: textTheme.display1.copyWith(color: Colors.black),
         ),
         SizedBox(
           height: 10,
         ),
         Text(
-          'Gramm',
+          "${item.amount.toString()}g",
           style: textTheme.caption,
         ),
         SizedBox(
@@ -40,7 +41,7 @@ class GoodInfoContent extends StatelessWidget {
               onPressed: () {},
             ),
             Text(
-              "9.99\$",
+              "\$${item.price}",
               style: textTheme.display1.copyWith(color: Colors.black),
             ),
           ],
@@ -56,7 +57,7 @@ class GoodInfoContent extends StatelessWidget {
           height: 10,
         ),
         Text(
-          'Description has not been written yet',
+          item.description,
           style: textTheme.body1,
         ),
       ],
