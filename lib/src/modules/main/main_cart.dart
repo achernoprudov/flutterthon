@@ -41,7 +41,8 @@ class MainCart extends StatelessWidget {
                 ),
               )
             ],
-          )
+          ),
+          SizedBox(height: 200,)
         ],
       ),
     );
