@@ -14,7 +14,9 @@ class GoodInfoContent extends StatelessWidget {
       children: <Widget>[
         Align(
           alignment: Alignment.center,
-          child: Image.network(item.imageUrl),
+          child: Hero(
+            tag: 'item-image-${item.uid}',
+            child: Image.network(item.imageUrl),),
         ),
         SizedBox(
           height: 30,
