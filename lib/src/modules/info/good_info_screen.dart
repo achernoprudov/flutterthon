@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterthon/src/models/good_item_model.dart';
+import 'package:flutterthon/src/modules/info/good_info_container.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 import 'good_info_bottom_panel.dart';
 import 'good_info_content.dart';
@@ -51,8 +53,11 @@ class GoodInfoScreen extends StatelessWidget {
 
   static Route<GoodItem> route(GoodItem item) {
     return PageRouteBuilder(
-        pageBuilder: (context, _, __) => GoodInfoScreen(
-              item: item,
+        pageBuilder: (context, _, __) => ScopedModel<GoodInfoContainer>(
+              model: GoodInfoContainer(item),
+              child: GoodInfoScreen(
+                item: item,
+              ),
             ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           final tween = Tween(begin: Offset(0, 1), end: Offset(0, 0));

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutterthon/src/models/good_item_model.dart';
+import 'package:flutterthon/src/modules/info/quantity_button.dart';
+import 'package:scoped_model/scoped_model.dart';
+
+import 'good_info_container.dart';
 
 class GoodInfoContent extends StatelessWidget {
   final GoodItem item;
@@ -39,31 +43,14 @@ class GoodInfoContent extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Container(
-              decoration: new BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.grey[200]),
-                  borderRadius: BorderRadius.all(Radius.circular(30))),
-              padding: EdgeInsets.all(12),
-              child: Row(
-                children: <Widget>[
-                  Icon(Icons.remove),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Text(
-                    "1",
-                    style: textTheme.title,
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Icon(Icons.add),
-                ],
-              ),
-            ),
-            Text(
-              "\$${item.price}",
-              style: textTheme.display1.copyWith(color: Colors.black),
+            QuantityButton(),
+            ScopedModelDescendant<GoodInfoContainer>(
+              builder: (context, child, model) {
+                return Text(
+                  "\$${item.price * model.quantity}",
+                  style: textTheme.display1.copyWith(color: Colors.black),
+                );
+              },
             ),
           ],
         ),
