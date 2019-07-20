@@ -18,7 +18,11 @@ class GoodInfoScreen extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             alignment: Alignment.bottomCenter,
-            child: GoodInfoBottomPanel(),
+            child: GoodInfoBottomPanel(
+              onAddTap: () {
+                Navigator.of(context).pop(item);
+              },
+            ),
           ),
           BackButton(),
         ],
@@ -32,7 +36,7 @@ class GoodInfoScreen extends StatelessWidget {
               item: item,
             ),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          final tween = Tween(begin: Offset(0, 1), end: Offset(0,0));
+          final tween = Tween(begin: Offset(0, 1), end: Offset(0, 0));
           return SlideTransition(
             position: tween.animate(animation),
             child: FadeTransition(
@@ -40,6 +44,7 @@ class GoodInfoScreen extends StatelessWidget {
               child: child,
             ),
           );
+          //
         });
   }
 }

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class GoodInfoBottomPanel extends StatelessWidget {
+  final VoidCallback onAddTap;
+
+  const GoodInfoBottomPanel({Key key, this.onAddTap}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -11,7 +15,7 @@ class GoodInfoBottomPanel extends StatelessWidget {
         ),
         Expanded(
           child: FlatButton(
-            onPressed: () {},
+            onPressed: onAddTap,
             color: Colors.yellow[700],
             textColor: Colors.black,
             shape:
