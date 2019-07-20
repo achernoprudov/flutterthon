@@ -23,8 +23,11 @@ class GoodItemWidget extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(top: 24, bottom: 12),
               alignment: Alignment.center,
-              child: Image.network(
-                item.imageUrl,
+              child: Hero(
+                tag: 'item-image-${item.uid}',
+                child: Image.network(
+                  item.imageUrl,
+                ),
               ),
             ),
             Container(
