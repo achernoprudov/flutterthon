@@ -14,7 +14,6 @@ class GoodInfoScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          
           GoodInfoContent(item),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
@@ -28,11 +27,20 @@ class GoodInfoScreen extends StatelessWidget {
   }
 
   static Route<GoodItem> route(GoodItem item) {
-    return MaterialPageRoute(builder: (context) {
-      return GoodInfoScreen(
-        item: item,
-      );
-    });
+    return PageRouteBuilder(
+        pageBuilder: (context, _, __) => GoodInfoScreen(
+              item: item,
+            ),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          final tween = Tween(begin: Offset(0, 1), end: Offset(0,0));
+          return SlideTransition(
+            position: tween.animate(animation),
+            child: FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          );
+        });
   }
 }
 
