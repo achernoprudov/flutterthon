@@ -3,6 +3,8 @@ import 'package:flutterthon/src/models/good_item_model.dart';
 import 'package:flutterthon/src/widgets/good_item_widget.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import 'modules/info/good_info_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   var items = [
     new GoodItem("1", "Segianno Organic Troulette", "", "", 7.99, 500),
@@ -27,6 +29,7 @@ class HomeScreen extends StatelessWidget {
           itemCount: items.length,
           itemBuilder: (BuildContext context, int index) => GoodItemWidget(
                 item: items[index],
+                onTap: openInfo(context, items[index]),
               ),
           staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
           mainAxisSpacing: 12,
@@ -34,5 +37,10 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  openInfo(BuildContext context, GoodItem item) {
+    final route = GoodInfoScreen.route(item);
+    Navigator.of(context).push(route);
   }
 }
