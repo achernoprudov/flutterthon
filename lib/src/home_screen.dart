@@ -6,12 +6,14 @@ class HomeScreen extends StatelessWidget {
   var items = [
     new GoodItem("1", "Segianno Organic Troulette", "", "", 7.99, 500),
     new GoodItem("2", "Pasta", "", "", 1.99, 450),
+    new GoodItem("3", "Tetskhskfhalshdf", "", "", 1.99, 450),
   ]; // TODO add dummy data
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
+    return Scaffold(
+        body: Container(
+      color: Colors.grey[100],
       child: GridView.count(
         mainAxisSpacing: 12,
         padding: EdgeInsets.all(12),
@@ -19,6 +21,6 @@ class HomeScreen extends StatelessWidget {
         children: items.map((item) => GoodItemWidget(item)).toList(),
         crossAxisCount: 2,
       ),
-    );
+    ));
   }
 }
